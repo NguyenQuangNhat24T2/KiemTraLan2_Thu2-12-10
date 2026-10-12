@@ -6,6 +6,7 @@ import android.os.Build
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
 class ChinhSuaCongViecActivity : AppCompatActivity() {
@@ -30,8 +31,15 @@ class ChinhSuaCongViecActivity : AppCompatActivity() {
         }
 
         btnLuuChinhSua.setOnClickListener {
-            val tenMoi = etChinhSuaTen.text.toString()
-            val moTaMoi = etChinhSuaMoTa.text.toString()
+            val tenMoi = etChinhSuaTen.text.toString().trim()
+            val moTaMoi = etChinhSuaMoTa.text.toString().trim()
+
+            // Kiem tra ten khong duoc de trong khi chinh sua
+            if (tenMoi.isEmpty()) {
+                etChinhSuaTen.error = "Ten cong viec khong duoc de trong!"
+                Toast.makeText(this, "Vui long nhap ten cong viec", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
 
             congViecHienTai?.let {
                 it.tenCongViec = tenMoi
