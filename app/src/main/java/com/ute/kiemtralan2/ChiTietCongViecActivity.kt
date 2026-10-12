@@ -1,20 +1,21 @@
 package com.ute.kiemtralan2
 
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 
 class ChiTietCongViecActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContentView(R.layout.activity_chi_tiet_cong_viec)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
+
+        val tvHienThiTen = findViewById<TextView>(R.id.tvHienThiTen)
+        val tvHienThiMoTa = findViewById<TextView>(R.id.tvHienThiMoTa)
+
+        val ten = intent.getStringExtra("duLieuTen") ?: ""
+        val moTa = intent.getStringExtra("duLieuMoTa") ?: ""
+
+        tvHienThiTen.text = "Ten cong viec: $ten"
+        tvHienThiMoTa.text = "Mo ta cong viec: $moTa"
     }
 }
