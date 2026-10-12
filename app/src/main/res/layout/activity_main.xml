@@ -10,7 +10,7 @@
         android:id="@+id/tvThongTinSinhVien"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Nguyen Quang Nhat - 23115053122132 - 23CNTT2"
+        android:text="Nguyen Quang Nhat - 2415053122226 - 24T2"
         android:textSize="16sp"
         android:textStyle="bold"
         android:paddingBottom="16dp" />
