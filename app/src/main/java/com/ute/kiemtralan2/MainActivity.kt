@@ -19,9 +19,11 @@ class MainActivity : AppCompatActivity() {
             val ten = etTenCongViec.text.toString()
             val moTa = etMoTaCongViec.text.toString()
 
-            val intentChuyenManHinh = Intent(this, ChiTietCongViecActivity::class.java)
-            intentChuyenManHinh.putExtra("duLieuTen", ten)
-            intentChuyenManHinh.putExtra("duLieuMoTa", moTa)
+            val doiTuongCongViec = CongViec(tenCongViec = ten, moTa = moTa)
+
+            val intentChuyenManHinh = Intent(this, ChiTietCongViecActivity::class.java).apply {
+                putExtra("doiTuongCongViec", doiTuongCongViec)
+            }
             startActivity(intentChuyenManHinh)
         }
     }
