@@ -40,4 +40,12 @@
         android:layout_marginTop="16dp"
         android:text="Tao cong viec" />
 
+    <!-- 5. Nut Xem danh sach cong viec -->
+    <Button
+        android:id="@+id/btnXemDanhSach"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Xem danh sach cong viec" />
+
 </LinearLayout>
