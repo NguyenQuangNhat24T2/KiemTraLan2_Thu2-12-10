@@ -15,4 +15,12 @@
         android:textStyle="bold"
         android:paddingBottom="16dp" />
 
+    <!-- 2. O nhap ten cong viec -->
+    <EditText
+        android:id="@+id/etTenCongViec"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nhap ten cong viec"
+        android:minHeight="48dp" />
+
 </LinearLayout>
