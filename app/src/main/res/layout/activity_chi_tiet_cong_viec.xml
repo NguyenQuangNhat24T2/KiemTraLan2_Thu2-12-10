@@ -29,12 +29,29 @@
         android:text="Mo ta cong viec: "
         android:textSize="16sp" />
 
-    <!-- Them vao cuoi LinearLayout cua activity_chi_tiet_cong_viec.xml -->
+    <!-- Hien thi trang thai cong viec tren man hinh chi tiet -->
+    <TextView
+        android:id="@+id/tvHienThiTrangThai"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Trang thai: Chua hoan thanh"
+        android:textSize="16sp"
+        android:textStyle="italic" />
+
+    <!-- Nut danh dau cong viec da hoan thanh -->
+    <Button
+        android:id="@+id/btnDanhDauHoanThanh"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Danh dau hoan thanh" />
+
     <Button
         android:id="@+id/btnChinhSua"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:text="Chinh sua" />
 
 </LinearLayout>

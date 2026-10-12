@@ -6,6 +6,7 @@ import android.os.Build
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 
@@ -13,6 +14,7 @@ class ChiTietCongViecActivity : AppCompatActivity() {
 
     private lateinit var tvHienThiTen: TextView
     private lateinit var tvHienThiMoTa: TextView
+    private lateinit var tvHienThiTrangThai: TextView
     private var congViecHienTai: CongViec? = null
 
     private val boKetQuaChinhSua = registerForActivityResult(
@@ -40,6 +42,8 @@ class ChiTietCongViecActivity : AppCompatActivity() {
 
         tvHienThiTen = findViewById(R.id.tvHienThiTen)
         tvHienThiMoTa = findViewById(R.id.tvHienThiMoTa)
+        tvHienThiTrangThai = findViewById(R.id.tvHienThiTrangThai)
+        val btnDanhDauHoanThanh = findViewById<Button>(R.id.btnDanhDauHoanThanh)
         val btnChinhSua = findViewById<Button>(R.id.btnChinhSua)
 
         congViecHienTai = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
@@ -50,6 +54,15 @@ class ChiTietCongViecActivity : AppCompatActivity() {
         }
 
         capNhatGiaoDien()
+
+        // Xu ly su kien danh dau cong viec da hoan thanh
+        btnDanhDauHoanThanh.setOnClickListener {
+            congViecHienTai?.let {
+                it.trangThai = "Da hoan thanh"
+                capNhatGiaoDien()
+                Toast.makeText(this, "Da cap nhat: Cong viec da hoan thanh!", Toast.LENGTH_SHORT).show()
+            }
+        }
 
         btnChinhSua.setOnClickListener {
             val intentChuyenSua = Intent(this, ChinhSuaCongViecActivity::class.java).apply {
@@ -63,6 +76,7 @@ class ChiTietCongViecActivity : AppCompatActivity() {
         congViecHienTai?.let {
             tvHienThiTen.text = "Ten cong viec: ${it.tenCongViec}"
             tvHienThiMoTa.text = "Mo ta cong viec: ${it.moTa}"
+            tvHienThiTrangThai.text = "Trang thai: ${it.trangThai}"
         }
     }
 }
