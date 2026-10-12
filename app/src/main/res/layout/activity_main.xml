@@ -32,4 +32,12 @@
         android:hint="Nhap mo ta cong viec"
         android:minHeight="48dp" />
 
+    <!-- 4. Nut Tao cong viec -->
+    <Button
+        android:id="@+id/btnTaoCongViec"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Tao cong viec" />
+
 </LinearLayout>
