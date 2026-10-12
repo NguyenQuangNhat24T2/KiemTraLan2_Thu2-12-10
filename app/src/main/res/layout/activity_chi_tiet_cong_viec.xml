@@ -14,10 +14,19 @@
         android:textStyle="bold"
         android:paddingBottom="16dp" />
 
+    <!-- 1. Hien thi ma cong viec -->
+    <TextView
+        android:id="@+id/tvHienThiMa"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ma cong viec: "
+        android:textSize="16sp" />
+
     <TextView
         android:id="@+id/tvHienThiTen"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:text="Ten cong viec: "
         android:textSize="16sp" />
 
@@ -29,7 +38,6 @@
         android:text="Mo ta cong viec: "
         android:textSize="16sp" />
 
-    <!-- Hien thi trang thai cong viec tren man hinh chi tiet -->
     <TextView
         android:id="@+id/tvHienThiTrangThai"
         android:layout_width="match_parent"
@@ -39,13 +47,13 @@
         android:textSize="16sp"
         android:textStyle="italic" />
 
-    <!-- Nut danh dau cong viec da hoan thanh -->
+    <!-- 2. Nut Hoan thanh -->
     <Button
-        android:id="@+id/btnDanhDauHoanThanh"
+        android:id="@+id/btnHoanThanh"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Danh dau hoan thanh" />
+        android:text="Hoan thanh" />
 
     <Button
         android:id="@+id/btnChinhSua"
