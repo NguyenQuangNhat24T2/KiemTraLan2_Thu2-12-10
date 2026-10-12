@@ -34,7 +34,6 @@ class ChinhSuaCongViecActivity : AppCompatActivity() {
             val tenMoi = etChinhSuaTen.text.toString().trim()
             val moTaMoi = etChinhSuaMoTa.text.toString().trim()
 
-            // Kiem tra ten khong duoc de trong khi chinh sua
             if (tenMoi.isEmpty()) {
                 etChinhSuaTen.error = "Ten cong viec khong duoc de trong!"
                 Toast.makeText(this, "Vui long nhap ten cong viec", Toast.LENGTH_SHORT).show()
@@ -44,6 +43,7 @@ class ChinhSuaCongViecActivity : AppCompatActivity() {
             congViecHienTai?.let {
                 it.tenCongViec = tenMoi
                 it.moTa = moTaMoi
+                // maCongViec va trangThai van duoc giu nguyen trong doi tuong
             }
 
             val intentKetQua = Intent().apply {
